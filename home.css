@@ -1,0 +1,24 @@
+.row {
+    width: 100%;
+}
+
+.navbar {
+    background-color: transparent;
+    background: transparent;
+    border-color: transparent;
+}
+
+.navbar li { color: #000 }
+
+#html-banner {
+    text-align: right;
+}
+
+#viewport1-title {
+    font-size: 50px;
+}
+#viewport1-desc {
+    font-size: 20px;
+}
+
+
