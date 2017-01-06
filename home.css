@@ -1,3 +1,38 @@
+@font-face
+{
+    font-family: Shabnam;
+    src: url('./shabnam/Shabnam.eot');
+    src: url('./shabnam/Shabnam.eot?#iefix') format('embedded-opentype'),
+    url('./shabnam/Shabnam.woff') format('woff'),
+    url('./shabnam/Shabnam.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face
+{
+    font-family: Shabnam;
+    src: url('./shabnam/Shabnam-Bold.eot');
+    src: url('./shabnam/Shabnam-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./shabnam/Shabnam-Bold.woff') format('woff'),
+    url('./shabnam/Shabnam-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face
+{
+    font-family: Shabnam;
+    src: url('./shabnam/Shabnam-Light.eot');
+    src: url('./shabnam/Shabnam-Light.eot?#iefix') format('embedded-opentype'),
+    url('./shabnam/Shabnam-Light.woff') format('woff'),
+    url('./shabnam/Shabnam-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+body
+{
+    font-family: Shabnam, Tahoma;
+    font-weight: 300;
+}
 .row {
     width: 100%;
 }
@@ -22,3 +57,25 @@
 }
 
 
+#blue {
+    color: cornflowerblue;
+}
+.navbar-brand {
+    font-weight: bold;
+}
+
+.viewport-text {
+    direction: rtl;
+    color: white;
+}
+
+#viewport1 {
+    height: 600px;
+
+}
+
+#tmpdiv {
+    background-color: black;
+    opacity: 0.8;
+    height: 100%;
+}

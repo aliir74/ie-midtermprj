@@ -17,40 +17,46 @@
 
 
     <div id="viewport1" class="row">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-            <nav  class="navbar navbar-inverse transparent">
-                <div class="container-fluid">
-                    <div class="navbar-header navbar-right">
-                        <a class="navbar-brand" href="#">استودیو امیرکبیر</a>
+        <div id="tmpdiv">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                <nav  class="navbar navbar-inverse transparent">
+                    <div class="container-fluid">
+                        <div class="navbar-header navbar-right">
+                            <a class="navbar-brand" href="#">
+                                <span>امیرکبیر</span>
+                                <span id="blue">استودیو</span>
+                                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li><button class="btn btn-info navbar-btn">ثبت نام</button></li>
+                            <li><a href="#">ورود</a></li>
+                        </ul>
                     </div>
-                    <ul class="nav navbar-nav">
-                        <li><button class="btn btn-info navbar-btn">ثبت نام</button></li>
-                        <li><a href="#">ورود</a></li>
-                    </ul>
+                </nav>
                 </div>
-            </nav>
+                <div class="col-md-2"></div>
             </div>
-            <div class="col-md-2"></div>
-        </div>
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div id="html-banner" class="col-md-6">
-                <div id="viewport1-title" class="row">
-                    مرکز بازی سازی امیرکبیر
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div id="html-banner" class="col-md-6">
+                    <div id="viewport1-title" class="row viewport-text">
+                        مرکز بازی سازی امیرکبیر
+                    </div>
+                    <br>
+                    <div id="viewport1-desc" class="row viewport-text">
+                        فللان بیسار بهمانانماشس شمسنتشمیسنت
+                    </div>
+                    <br>
+                    <div id="viewport1-entergame" class="row viewport-text">
+                        <button class="btn btn-info navbar-btn">ورود به صفحه‌ی بازی</button>
+                        <a href="#">تریلر این بازی <i class="fa fa-play-circle" aria-hidden="true"></i></a>
+                    </div>
                 </div>
-                <br>
-                <div id="viewport1-desc" class="row">
-                    فللان بیسار بهمانانماشس شمسنتشمیسنت
-                </div>
-                <br>
-                <div id="viewport1-entergame" class="row">
-                    <a href="#">تریلر این بازی <i class="fa fa-play-circle" aria-hidden="true"></i></a>
-                    <button class="btn btn-info navbar-btn">ورود به صفحه‌ی بازی</button>
-                </div>
+                <div class="col-md-2"></div>
             </div>
-            <div class="col-md-2"></div>
         </div>
     </div>
 
@@ -60,5 +66,19 @@
     <div id="connectus" class="row"></div>
     <div id="footer" class="row"></div>
     <div id="copyright" class="row"></div>
+
+
+    <script>
+        $(document).ready(function () {
+            $.get('http://api.ie.ce-it.ir/F95/home',function (data) {
+                $('#viewport1-title').html( (data.response.result.homepage.slider[1].title) );
+                $('#viewport1-desc').html( (data.response.result.homepage.slider[1].abstract) );
+                var imgUrl = (data.response.result.homepage.slider[1].large_image);
+                $('#viewport1').css('background-image', 'url(' + imgUrl + ')' );
+                $('#viewport1').css('background-repeat', 'no-repeat' );
+                $('#viewport1').css('background-size', 'cover' );
+            });
+        });
+    </script>
 </body>
 </html>
