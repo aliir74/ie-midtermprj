@@ -120,20 +120,20 @@ body
     z-index: 2;
 }
 */
-
-.owl-item {
+/*
+.owl-item:has(< #slider){
     position: absolute;
     bottom: 0px;
 }
-
-.owl-item:hover {
+*/
+#slider .owl-item:hover{
     //height: 300px;
     transform: scale(1.15);
-    z-index: 2;
+//    z-index: 2;
 }
 
 .owl-stage {
-    position: relative;
+ //   position: relative;
 }
 
 .slideBarItem:hover {
@@ -153,8 +153,8 @@ body
 }
 
 .activeSOverlay {
-    background-color: darkred ;
-    opacity: 0.8 ;
+    background-color: darkred !important;
+    opacity: 0.8 !important;
 }
 
 .sliderOverlay:hover {
@@ -201,4 +201,61 @@ li {
 #registerButton {
     padding: 6px;
     color: white;
+}
+
+#viewport2 {
+    margin-top: 30px !important;
+    direction: rtl;
+    text-align: right;
+}
+
+#newGamesTitle {
+    font-size: 30px;
+}
+.sliderImage2 {
+    height: 130px;
+    background-repeat: no-repeat;
+    //visibility: hidden;
+}
+
+#slider2 {
+    //height: 130px !important;
+}
+
+#comments {
+    direction: rtl;
+    text-align: right;
+    background-color: #dddddd;
+}
+
+#commentsTitle {
+    font-size: 30px;
+}
+
+.commentsInnerTitle {
+    font-size: 20px;
+}
+
+hr.style14 {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+
+.imgFloat {
+    border-radius: 50%;
+    float: right;
+    margin-left: 10px;
+}
+
+.rtl {
+    direction: rtl;
+}
+
+#commentsInnerTitle {
+    font-size: 20px;
+    margin-bottom: 10px;
 }
