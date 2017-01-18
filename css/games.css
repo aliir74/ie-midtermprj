@@ -34,6 +34,7 @@ html {
 }
 body
 {
+    overflow-x: hidden;
     font-family: Shabnam, Tahoma;
     font-weight: 300;
     width: 100%;
@@ -47,6 +48,9 @@ body
 
 }
 
+.row {
+
+}
 .navbar li { color: #000 }
 
 .blue {
@@ -74,14 +78,14 @@ body
 }
 
 #header {
-    height: 350px;
+    height: 400px;
     background-image: url('../assets/call-of-duty-ghosts-pc-screenshot-1920x1080-005.jpg');
     background-size: 100%;
 }
 
 #layerDiv {
     background-color: black;
-    opacity: 0.8;
+    opacity: 0.9;
     height: 100%;
     width: 100%;
 }
