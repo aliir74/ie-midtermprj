@@ -99,14 +99,44 @@ body
 .slideBarItem {
     //display: inline-block;
     //float: left;
-
+    direction: rtl;
+    text-align: right;
+    color: white;
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
+/*
+#slider-row{
+    overflow: visible;
+
+}
+.owl-item{
+    float: left;
+    z-index: 0;
+}
+.owl-item:hover{
+    transform: scale(1.2);
+    z-index: 2;
+}
+*/
+
+.owl-item {
+    position: absolute;
+    bottom: 0px;
+}
+
+.owl-item:hover {
+    //height: 300px;
+    transform: scale(1.15);
+    z-index: 2;
+}
+
+.owl-stage {
+    position: relative;
+}
+
 .slideBarItem:hover {
-    //transform: scale(1.3);
-    height: 120%;
 }
 
 .sliderImage {
@@ -115,14 +145,60 @@ body
 }
 
 .sliderOverlay {
-    background-color: 0;
-    opacity: 0.8;
+    background-color: black;
+    opacity: 0.6;
     height: 100%;
     width: 100%;
 
 }
 
+.activeSOverlay {
+    background-color: darkred ;
+    opacity: 0.8 ;
+}
+
 .sliderOverlay:hover {
     background-color: cornflowerblue;
+    opacity: 1;
 
+}
+.sliderOverlay:focus {
+    background-color: #3a945b;
+}
+
+.sliderText {
+    padding-top: 15px;
+    color: white;
+    font-family: bold;
+    font-size: 20px;
+    direction: rtl;
+    text-align: center;
+}
+
+.sliderComments {
+    padding-top: 15px;
+    color: white;
+    padding-right: 20px;
+    font-family: bold;
+    font-size: 15px;
+}
+
+.sliderButtons {
+    //margin-top: 50px;
+    position: absolute;
+    //color: white;
+    //margin-right: 20px;
+    right: 20px;
+    top: 150px;
+    font-family: bold;
+    font-size: 15px;
+}
+
+li {
+    list-style: none;
+}
+
+#registerButton {
+    padding: 6px;
+    color: white;
 }
