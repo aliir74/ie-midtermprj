@@ -90,6 +90,8 @@ body
     width: 100%;
 }
 
+
+
 #headerCenter {
     margin-top: 100px;
 }
@@ -138,4 +140,15 @@ body
     bottom: 1px;
     color: white;
     font-family: bold;
+}
+
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+    zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
 }
