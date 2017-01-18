@@ -5,12 +5,15 @@
 var gameTitle;
 var gameData;
 
+var tabQuery = ['http://api.ie.ce-it.ir/F95/games/'+getUrlVars()['game']+'/info', 'http://api.ie.ce-it.ir/F95/games/'+getUrlVars()['game']+'/leaderboard', 'http://api.ie.ce-it.ir/F95/games/'+getUrlVars()['game']+'/comments', 'http://api.ie.ce-it.ir/F95/games/'+getUrlVars()['game']+'/related_games', 'http://api.ie.ce-it.ir/F95/games/'+getUrlVars()['game']+'/gallery'];
+var tabData = [null, null, null, null, null];
+
 $(document).ready(function () {
     var query = 'http://api.ie.ce-it.ir/F95/games/'+getUrlVars()['game']+'/header';
     $.get(query,function (data) {
-        console.log(query);
         gameData = data.response.result.game;
         loadHeader();
+
     });
 });
 
@@ -61,4 +64,23 @@ function loadHeader() {
     console.log(rate+' '+ratef+' '+ratec);
     console.log('loadHeader');
 
+    loadData(0);
+}
+
+function loadData(x) {
+    if(tabData[x] == null) {
+        $.get(tabQuery[x],function (data) {
+            tabData[x] = data.response.result.game;
+            showData(x);
+        });
+    } else {
+        showData(x);
+    }
+}
+
+function showData(x) {
+    if(x == 0) {
+        $('#infoContent').html(tabData[x].info)
+        //$('#infoContent').append("<img class='infoImg' src='"+tabData[x].large_image+"'>");
+    }
 }
