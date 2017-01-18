@@ -225,15 +225,13 @@ li {
 #comments {
     direction: rtl;
     text-align: right;
-    background-color: #dddddd;
+    background-color: #f9f5f2;
 }
 
 #commentsTitle {
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 30px;
-}
-
-.commentsInnerTitle {
-    font-size: 20px;
 }
 
 hr.style14 {
@@ -249,13 +247,55 @@ hr.style14 {
     border-radius: 50%;
     float: right;
     margin-left: 10px;
+    width: 50px;
+    height: 50px;
+}
+.notRounded {
+    border-radius: 0% !important;
 }
 
 .rtl {
     direction: rtl;
 }
 
-#commentsInnerTitle {
+.commentsInnerTitle {
     font-size: 20px;
     margin-bottom: 10px;
 }
+
+#contactusOverlay {
+    background-color: #7590f9;
+    opacity: 0.9;
+    //height: 100%;
+    height: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+#contactus {
+    width: 100%;
+    height: 400px;
+    background-image: url('best_hd_assassins_creed_black_flag_game_wallpapers.jpg');
+    background-size:100%;
+}
+
+#contactusTitle {
+    padding-top: 100px;
+    padding-bottom: 10px;
+    font-size: 50px;
+    font-family: bold;
+    color: white;
+}
+#contactusDesc {
+    padding-bottom: 20px;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+#contactusImg {
+    font-size: 20px;
+    font-family: bold;
+    background-color: white;
+}
+
+

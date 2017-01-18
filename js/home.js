@@ -27,6 +27,7 @@ $(document).ready(function () {
         createSlider2(data);
         test();
         loadComments();
+        loadTutorials();
     });
 });
 
@@ -117,5 +118,20 @@ function loadComments() {
         "<br><hr class='style14'>");
 
         $("#commentsContent").append(s);
+    }
+}
+
+function loadTutorials() {
+    var sArray = homeData.response.result.homepage.tutorials;
+    for(i = 0; i < sArray.length; i++) {
+        var imgUrl = sArray[i].game.small_image;
+        var title = sArray[i].title;
+        var date = sArray[i].date;
+        var s = $("<img class='imgFloat notRounded' src='"+imgUrl+"'>"+
+            "<div class='rtl'>"+title+"</div>"+
+            "<div>"+date+"</div>"+
+            "<br><hr class='style14'>");
+
+        $("#tutorialsContent").append(s);
     }
 }
