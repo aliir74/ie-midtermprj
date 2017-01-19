@@ -81,6 +81,7 @@ function loadData(x) {
 function showData(x) {
     if(x == 0) {
         $('#infoContent').html(tabData[x].info)
-        //$('#infoContent').append("<img class='infoImg' src='"+tabData[x].large_image+"'>");
+    } else if(x == 1) {
+
     }
 }
