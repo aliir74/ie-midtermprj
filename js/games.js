@@ -12,6 +12,7 @@ $(document).ready(function () {
     var query = 'http://api.ie.ce-it.ir/F95/games/'+getUrlVars()['game']+'/header';
     $.get(query,function (data) {
         gameData = data.response.result.game;
+        console.log('document ready'+data.response.result.game);
         loadHeader();
 
     });
@@ -31,6 +32,7 @@ function getUrlVars()
 }
 
 function loadHeader() {
+    console.log(gameData);
     var bigImg = gameData.large_image;
     var littleImg = gameData.small_image;
     var gameTitle = gameData.title;
@@ -70,7 +72,11 @@ function loadHeader() {
 function loadData(x) {
     if(tabData[x] == null) {
         $.get(tabQuery[x],function (data) {
-            tabData[x] = data.response.result.game;
+            console.log(tabQuery[x]);
+            if(x==0)
+                tabData[x] = data.response.result.game;
+            else if(x==1)
+                tabData[x] = data.response.result.leaderboard;
             showData(x);
         });
     } else {
@@ -82,6 +88,32 @@ function showData(x) {
     if(x == 0) {
         $('#infoContent').html(tabData[x].info)
     } else if(x == 1) {
+        ///console.log(tabData[1]);
+        loadScoreTab();
+    }
+}
+
+function loadScoreTab() {
+
+    tabData[1].sort(function (a, b) {
+        return a.displacement - b.displacement;
+    });
+
+    for(i = 0; i < tabData[1].length; i++) {
+        var rank = tabData[1][i].displacement;
+        var medalQuery = "<div class='col-md-2'><i class='fa fa-arrow-down' aria-hidden='true'></i></div>"
+        var s = $("<div class='rowList row'>" +
+            "<div class='col-md-2'>"+tabData[1][i].score+"</div>"+
+        medalQuery+
+            "<div class='col-md-1'>"+tabData[1][i].level+"</div>"+
+        "<div class='col-md-5'><img class='profileList' src='"+tabData[1][i].player.avatar+"'>"+
+            "<div id='textlist1'>"+tabData[1][i].player.name+"</div>"+
+                "</div>"+
+        "<div class='col-md-1'><i id='medal' class='rank"+rank+" fa fa-trophy' aria-hidden='true'></i>"+
+            "</div>"+
+            "<div class='col-md-1'>"+rank+"</div></div>");
+
+        $('#scoreList').append(s);
 
     }
 }

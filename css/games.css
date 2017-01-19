@@ -479,7 +479,7 @@ hr {
 }
 
 .rowList {
-    margin-top: 5px;
+    margin-top: 20px !important;
     text-align: right;
 }
 
@@ -490,3 +490,24 @@ hr {
     float: right;
     margin-left: 10px;
 }
+
+.rank1 {
+    color: yellow !important;
+}
+
+.rank2 {
+    color: #989996 !important;
+}
+
+.rank3 {
+    color: #b5824b !important;
+}
+
+.fa-arrow-down {
+    color: red;
+}
+
+.fa-arrow-up {
+    color: green;
+}
+
