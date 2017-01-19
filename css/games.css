@@ -465,3 +465,28 @@ hr {
 #firstrankscore {
     margin-right: 50px;
 }
+
+#scoreNav {
+    background-color: #f9f5f2;
+    width: 100%;
+    margin: 0;
+    color: black;
+    direction: rtl;
+}
+
+.row{
+    margin: 0;
+}
+
+.rowList {
+    margin-top: 5px;
+    text-align: right;
+}
+
+.profileList {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    float: right;
+    margin-left: 10px;
+}
